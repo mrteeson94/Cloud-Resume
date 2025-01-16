@@ -42,12 +42,16 @@ return count;
 * Create S3 bucket to store all files 
 * Create a Cloudfront (CDN) distribution with it's origin linked to the S3 bucket
 * Have the CDN generated policy copied into the s3 bucket policy to allow cloudfront read access.
+* Static website should be accessible with cloudfront url while s3 objects is set to private for security. 
 
-## Current Hurdle
+
+##  Hurdle from 15-16/01/2025
 **Cloudfront domain url display '403 error'** - Cloudfront having permission issue accessing s3 root object.
 
 **Current troubleshooting**:
 * S3 Object encryption check if it is AWS-KMS 
 * Review bucket policy for explicit deny, misused ARN or AWS services.
-* Review bucket ownership (confirmed s3 bucket is owned by awsAdmin user)
-* s3 object url can be accessed by admin (confirmed only with bucket policy containing 'PublicReadGetObject')
+* Review bucket ownership (confirmed s3 bucket is owned by awsAdmin user).
+* s3 object url can be accessed by admin (confirmed only with bucket policy containing 'PublicReadGetObject').
+
+ ***FIX*** - Root index.html had wrong dir pathing resulting to the redirected webpage not existing and thus resulting to the 403 page. Reason for root index.html, cloudfront had issue accessing the subfolder that houses the index.html so i have created this file to tackle the issue. 
