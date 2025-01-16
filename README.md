@@ -38,3 +38,16 @@ return count;
 ```
 
 
+## Stage 2 - Deploying Static website on AWS
+* Create S3 bucket to store all files 
+* Create a Cloudfront (CDN) distribution with it's origin linked to the S3 bucket
+* Have the CDN generated policy copied into the s3 bucket policy to allow cloudfront read access.
+
+## Current Hurdle
+**Cloudfront domain url display '403 error'** - Cloudfront having permission issue accessing s3 root object.
+
+**Current troubleshooting**:
+* S3 Object encryption check if it is AWS-KMS 
+* Review bucket policy for explicit deny, misused ARN or AWS services.
+* Review bucket ownership (confirmed s3 bucket is owned by awsAdmin user)
+* s3 object url can be accessed by admin (confirmed only with bucket policy containing 'PublicReadGetObject')
