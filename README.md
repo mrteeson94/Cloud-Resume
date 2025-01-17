@@ -1,15 +1,16 @@
 # Cloud-Resume
 ## Introduction
-Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure. 
+Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure.
 
 
-## AWS services to be implemented
+## Tech-Stack
 * **S3** - To store website
 * **DynamoDB** (on-demand pricing) - database to store website counter
-* **Lambda** - Obtain updates and communicate changes via API to both DB and S3.
+* **AWS Lambda** - Obtain updates and communicate changes via API to both DB and S3.
 * **SQS Queue** - queue lambda jobs to avoid overwhelming the DB.
 * **Cloudfront and Route 53** - Assigning domain to the website and point traffic to this domain from cloudfront distribution.
-* **Cloudformation/Terrafrom** - Deploying all services using the IaC (infrastructure as code) approach using terraform. 
+* **Terrafrom** - Deploying all services using the IaC (infrastructure as code) approach using terraform. 
+* **Github Actions** - CI/CD implementation
 
 
 ## Stage 1 - Building the front-end 
