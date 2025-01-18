@@ -1,19 +1,20 @@
-window.addEventListener(('DomContentLoaded'), (event) => {
-  getVisitCount();
+window.addEventListener('DOMContentLoaded', (event) => {
+  updateCounter();
 })
 
-const functionApi = '';
+console.log("JS triggered")
 
-const getVisitCount = () => {
-  let count = 50;
-  fetch(functionApi).then(Response => {
-    return Response.json()
-  }).then(Response => {
-    console.log("Website called function API.");
-    count = Response.count;
-    document.getElementById("Counter").innerText = count;
-  }).catch(function(error){
-    console.log(error)
-});
-return count;
+// #Function sends a request to lambda function which lambda will return JSON file containing the updated view counter data.
+async function updateCounter() {
+  console.log("run updateCounter()")
+  try{
+    let response = await fetch("https://wnkrfs2ntgyr3m2x3li42dv7by0ffjte.lambda-url.ap-southeast-2.on.aws/")
+    let data = await response.json();
+    console.log(`aws lambda respond with current view: ${data}`);
+    document.getElementById("counter").innerText = data;
+    console.log("exit function")
+  } catch(error){
+    console.error("Error detected:",error);
+    console.log("exit error")
+  }
 }
