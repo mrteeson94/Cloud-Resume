@@ -2,6 +2,7 @@
 ## Introduction
 Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure.
 
+Website link: https://d14agfb5ms2whd.cloudfront.net (still WIP)
 
 ## Tech-Stack
 * **S3** - To store website
@@ -52,3 +53,28 @@ Applying my skills I have learnt from the AWS certificate to host my resume webs
 **Issue 2: Internal server error** - lambda having permission issue accessing dynamodb. 
 
 Fixed via creating IAM policy and assuming this to lambda role, updated instructions with this fix!
+
+ ## Stage 4 - CI/CD integration with Github
+ * Github workflow folder created
+ * Create a .yaml folder containing logic to upload website dir to the s3 bucket.
+ * Every push to main branch will now trigger Github Actions to deploy the code to aws s3.
+ * I need to run an invalidation event on cloudfront to remove cache content of the old s3 content to view the updated website.
+
+
+ ## Stage 5 - Creating the cloud infrastructure with Terraform (IaC)
+* Install terraform to PC
+* Create infrastructure folder to house all terraform env files (main, provider, and scripts)
+* Create python script which will contain the lambda function.
+* Code infrastructure provision logic in main.tf file for creating the lambda function, the policy for it to access dynamodb and public url. 
+
+**Syntax to remember when using terraform:**
+```terraform
+#Creates terraform dir environment
+terraform init 
+
+#Shows resource created/modified/deleted if tf executes
+terraform plan 
+
+#Executes terraform config file to deploy resources 
+terraform apply
+```
