@@ -14,7 +14,7 @@ Website link: https://d14agfb5ms2whd.cloudfront.net (still WIP)
 * **Github Actions** - CI/CD implementation
 
 ##Architecture
-![Alt Text](https://github.com/mrteeson94/Cloud-Resume/frontend/images/diagram.jpg)
+![Alt Text](https://github.com/mrteeson94/Cloud-Resume/website/frontend/images/diagram.jpg)
 
 ## Stage 1 - Building the front-end 
 
