@@ -80,3 +80,7 @@ terraform plan
 #Executes terraform config file to deploy resources 
 terraform apply
 ```
+
+## TODO:
+-Update python script to include IPv4 and time of the request of the session for logging and security purpose.
+-Create an extensive documentation file which will be useful for migration/project scaling.
