@@ -1,8 +1,8 @@
 # Cloud-Resume
 ## Introduction
-Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure.
--**Currently offline for cost saving reason.**
-Website link: https://d14agfb5ms2whd.cloudfront.net
+* Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure.
+* **Currently offline for cost saving reason.**
+* Website link: https://d14agfb5ms2whd.cloudfront.net
 
 ## Tech-Stack
 * **S3** - To store website
