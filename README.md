@@ -2,7 +2,7 @@
 ## Introduction
 * Applying my skills I have learnt from the AWS certificate to host my resume website on AWS cloud infrastructure.
 * **Currently offline for cost saving reason.**
-* Website link: https://d14agfb5ms2whd.cloudfront.net
+* Website link: https://d14agfb5ms2whd.cloudfront.net (Currently down due to migration to new architecture)
 
 ## Tech-Stack
 * **S3** - To store website
@@ -82,6 +82,6 @@ terraform apply
 ```
 
 ## TODO:
-* Update JS code to include IPv4 and time of the request of the session for logging and security purpose :white_check_mark: 
+* Update JS code to include IPv4 and time of the request of the session for logging and security purpose
 * Create an extensive documentation file which will be useful for migration/project scaling. (In-progress)
 * update terraform code to replace files over deleting them.
